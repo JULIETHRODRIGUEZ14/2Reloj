@@ -1,0 +1,107 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;/*ajusta al 100 de la altura de la pantalla*/
+    background-color: rgb(26, 34, 32);    
+}
+
+.Reloj{
+    width: 550px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/fondo_Reloj.png);  
+    background-size: 80%; /*ajusta el tamaño de la imagen de fondo*/
+    background-position: center;/*centra la imagen horizontalmente y verticalmente*/
+    background-repeat: no-repeat;
+    border: 1rem solid rgb(147, 38, 103);
+    border-radius: 30vh;/*Forma circular vh porciento*/
+    box-shadow: inset 0px 0px 20px 5px;/*3.difuminado la sombra, 4.sombra de forma pareja en todo el contenedor*/
+}
+.digital{
+    position:absolute;
+    top: 65%;/*centra verticalmente en el centro del reloj analogico*/
+    left: 50%;/*centra horizontalmente en el centro del reloj analogico*/
+    transform: translate(-50%,-50%);/*alinea el centro del contenido*/
+    border: 1rem solid rgb(147, 38, 103);
+    width: 25vh;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; 
+    font-family: monospace; /*separacion entre numeros monospace*/
+    font-size: 1.5rem; /*fuente*/
+    color: rgb(147, 38, 103);
+
+}
+
+.Reloj::before{
+    content: '';
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(147, 38, 103);
+    border-radius: 50vh;/*Forma circular*/
+    z-index: 100;
+}
+
+.hora{
+    width: 150px;
+    height: 150px;
+}
+
+.minuto{
+    width: 190px;
+    height: 190px;
+}
+
+.segundo{
+    width: 250px;
+    height: 250px;
+}
+
+.hora::before{
+    content: '';
+    position:absolute;
+    width: 8px;
+    height: 90px;
+    background: rgb(225, 176, 176);
+    z-index: 10;
+    border-radius: 50vh;
+}
+
+.minuto::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 130px;
+    background: rgb(201, 1, 240);
+    z-index: 11;
+    border-radius: 50vh;
+}
+
+.segundo::before{
+    content: '';
+    position: absolute;
+    width: 1.8px;
+    height: 150px;
+    background: rgb(201, 1, 240);
+    z-index: 12;
+    border-radius: 50vh;
+}
+
+.hora, .minuto, .segundo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50vh;
+}
